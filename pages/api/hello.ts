@@ -21,6 +21,9 @@ export default async function handler(
         frequency_penalty: 0,
         presence_penalty: 0,
       });
+
+      console.log(completion); // Add this line to log the completion object
+
       res.status(200).json({result: completion.data});
 }
 
