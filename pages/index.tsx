@@ -10,28 +10,17 @@ export default function Home() {
   };
 
   const handleOnClick = async () => {
-    setCompletion("Loading....");
-    try {
-      const response = await fetch("/api/hello", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text: value }),
-      });
-      const data = await response.json();
-
-      if (response.ok && data.result && data.result.choices && data.result.choices.length > 0) {
-        setCompletion(data.result.choices[0].text);
-      } else {
-        setCompletion("Error: Invalid response received");
-      }
-    } catch (error) {
-      console.error("An error occurred:", error);
-      setCompletion("Error: An error occurred while processing the request");
-    } finally {
-      setValue("");
-    }
+    setCompletion('Loading...');
+    const response = await fetch('/api/hello', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ text: value }),
+    });
+    const data = await response.json();
+    setValue('');
+    setCompletion(data.result.choices[0].text);
   };
 
   return (
