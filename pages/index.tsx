@@ -28,7 +28,7 @@ export default function Home() {
   return (
   <div className="flex flex-col items-center justify-center min-h-screen bg-sky-100">
     <div className="mb-4">
-      <h2 className="text-2xl font-bold">Enter a prompt</h2>
+      <h2 className="text-2xl font-bold">Enter a prompt:</h2>
     </div>
     <input className="px-4 py-2 border border-gray-300 rounded-md w-64 mb-4" value={value} onChange={handleInput} />
     <button className="bg-black p-3 text-white hover:bg-gray-600 rounded-full"onClick={handleOnClick}>Generate</button>
