@@ -10,7 +10,7 @@ export default function Home() {
   };
 
   const handleOnClick = async () => {
-    setCompletion("Loading...");
+    setCompletion("Loading..");
     try {
       const response = await fetch("/api/hello", {
         method: "POST",
